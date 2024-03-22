@@ -1,0 +1,29 @@
+{
+  "name": "pdf",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@config-plugins/react-native-blob-util": "^5.0.0",
+    "@config-plugins/react-native-pdf": "^5.0.0",
+    "expo": "~48.0.21",
+    "expo-dev-client": "~2.2.1",
+    "expo-splash-screen": "~0.18.2",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.14",
+    "react-native-blob-util": "^0.18.2",
+    "react-native-fs": "^2.20.0",
+    "react-native-html-to-pdf": "^0.12.0",
+    "react-native-paper": "^5.12.3",
+    "react-native-pdf": "^6.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
