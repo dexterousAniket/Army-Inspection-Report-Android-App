@@ -1,4 +1,4 @@
-export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
+export default makeHtml = (page1Data, page2Data, page3Data, page4Data, page5Data) => {
   let html = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +12,9 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
       @page {
         size: A4;
         margin: 0;
+      }
+      * {
+          font-size: 13px;
       }
       table {
         width: 100%;
@@ -47,19 +50,19 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
             Make, Model and type :
           </p>
           <p>
-            B. A. Number : <span style="color: blue">${page1Data.pages[0].fields[0].value}</span>
+            B. A. Number : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[0].value}</span>
           </p>
           <p>
             Distance/hours run:
-            <span style="color: blue">${page1Data.pages[0].fields[1].value}</span>
+            <span style="color: blue; text-align: center">${page1Data.pages[0].fields[1].value}</span>
           </p>
           <p>
             (a) Since entry into service :
-            <span style="color: blue">${page1Data.pages[0].fields[2].value}</span>
+            <span style="color: blue; text-align: center">${page1Data.pages[0].fields[2].value}</span>
           </p>
           <p>
             (b) Last base overhaul :
-            <span style="color: blue">${page1Data.pages[0].fields[3].value}</span>
+            <span style="color: blue; text-align: center">${page1Data.pages[0].fields[3].value}</span>
           </p>
           <p>
             (c) On the present engine :<span style="color: blue"
@@ -69,22 +72,22 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
         </td>
         <td colspan="3">
           <p>
-            Holding unit : <span style="color: blue">${page1Data.pages[0].fields[5].value}</span>
+            Holding unit : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[5].value}</span>
           </p>
           <p>
-            Maint Wksp : <span style="color: blue">${page1Data.pages[0].fields[6].value}</span>
+            Maint Wksp : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[6].value}</span>
           </p>
           <p>
-            Date of inspection : <span style="color: blue">${page1Data.pages[0].fields[7].value}</span>
+            Date of inspection : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[7].value}</span>
           </p>
           <p>
-            Date veh taken into service : <span style="color: blue">${page1Data.pages[0].fields[8].value}</span>
+            Date veh taken into service : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[8].value}</span>
           </p>
           <p>
-            Date of overhaul : <span style="color: blue">${page1Data.pages[0].fields[9].value}</span>
+            Date of overhaul : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[9].value}</span>
           </p>
           <p>
-            Date of last engine change : <span style="color: blue">${page1Data.pages[0].fields[10].value}</span>
+            Date of last engine change : <span style="color: blue; text-align: center">${page1Data.pages[0].fields[10].value}</span>
           </p>
         </td>
       </tr>
@@ -92,141 +95,150 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
         <td colspan="3">
           <p>Tools and equipment:</p>
           <p>
-            (a) As per VKL: Yes/ No <span style="color: blue">${page1Data.pages[1].fields[0].value}</span>
+            (a) As per VKL: Yes/ No <span style="color: blue; text-align: center">${page1Data.pages[1].fields[0].value}</span>
           </p>
           <p>
             If no, demand no :
-            <span style="color: blue">${page1Data.pages[1].fields[1].value}</span>
+            <span style="color: blue; text-align: center">${page1Data.pages[1].fields[1].value}</span>
           </p>
-          <p>(b) Serviceability: S/ UNSV <span style="color: blue">${page1Data.pages[1].fields[2].value}</span></p>
+          <p>(b) Serviceability: S/ UNSV <span style="color: blue; text-align: center">${page1Data.pages[1].fields[2].value}</span></p>
         </td>
         <td colspan="3">
           <p>Documentation :</p>
-          <p>(a) Log book : Yes/ No <span style="color: blue">${page1Data.pages[2].fields[0].value}</span></p>
-          <p>(b) Previous CEME Form: Yes/ No <span style="color: blue">${page1Data.pages[2].fields[1].value}</span></p>
+          <p>(a) Log book : Yes/ No <span style="color: blue; text-align: center">${page1Data.pages[2].fields[0].value}</span></p>
+          <p>(b) Previous CEME Form: Yes/ No <span style="color: blue; text-align: center">${page1Data.pages[2].fields[1].value}</span></p>
           <p>(c)
-          <p>(d) Cannibalization certi for main assy, if any : Yes/ No <span style="color: blue">${page1Data.pages[2].fields[3].value}</span></p>
+          <p>(d) Cannibalization certi for main assy, if any : Yes/ No <span style="color: blue; text-align: center">${page1Data.pages[2].fields[3].value}</span></p>
         </td>
       </tr>
       <tr>
         <td colspan="3">(a) Maintenance :Adequate/ Inadequate
-        <span style="color: blue">${page1Data.pages[3].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[3].fields[0].value}</span>
         </td>
         <td rowspan="4" colspan="3">
-            <p> Engine No	: <span style="color: blue">${page1Data.pages[9].fields[0].value}</span> </p>
-            <p> Chassis No	: <span style="color: blue">${page1Data.pages[10].fields[0].value}</span> </p>
-            <p> Rotary Pump No: <span style="color: blue">${page1Data.pages[11].fields[0].value}</span> </p>
-            <p> Battery No	: <span style="color: blue">${page1Data.pages[12].fields[0].value}</span> </p>
+            <p> Engine No	: <span style="color: blue; text-align: center">${page1Data.pages[9].fields[0].value}</span> </p>
+            <p> Chassis No	: <span style="color: blue; text-align: center">${page1Data.pages[10].fields[0].value}</span> </p>
+            <p> Rotary Pump No: <span style="color: blue; text-align: center">${page1Data.pages[11].fields[0].value}</span> </p>
+            <p> Battery No	: <span style="color: blue; text-align: center">${page1Data.pages[12].fields[0].value}</span> </p>
         </td>
       </tr>
       <tr>
         <td colspan="3">(b) Lubrication :Adequate/ Inadequate 
-        <span style="color: blue">${page1Data.pages[4].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[4].fields[0].value}</span>
         </td>
       </tr>
       <tr>
         <td colspan="3">(c) Cleanliness :Adequate/ Inadequate
-        <span style="color: blue">${page1Data.pages[5].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[5].fields[0].value}</span>
         </td>
       </tr>
       <tr>
         <td colspan="3">(d) Adjustment/free play: Correct/ Incorrect
-        <span style="color: blue">${page1Data.pages[6].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[6].fields[0].value}</span>
       </td>
       </tr>
       <tr>
         <td colspan="3">(e) KPL : 
-        <span style="color: blue">${page1Data.pages[7].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[7].fields[0].value}</span>
         </td>
         <td colspan="3">Tyre rotation carried out: Yes/No
-        <span style="color: blue">${page1Data.pages[13].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[13].fields[0].value}</span>
         </td>
       </tr>
       <tr>
         <td colspan="3">(f) Mod done, if any with auth:
-        <span style="color: blue">${page1Data.pages[8].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[8].fields[0].value}</span>
         </td>
         <td colspan="3"></td>
       </tr>
       <tr>
-        <th style="text-align: center;" colspan="6"> ROAD TEST:</th>
+        <th style="text-align: center;" colspan="6"> ROAD TEST : 
+          <span style="color:blue">${page1Data.pages[14].fields[0].value}</span>
+        </th>
       </tr>
       <tr>
         <td colspan="3">
             Engine : S/ UNSV 
-        <span style="color: blue">${page1Data.pages[14].fields[0].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[1].value}</span>
         </td>
         <td colspan="3">
             Steering : S/ UNSV
-        <span style="color: blue">${page1Data.pages[14].fields[4].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[5].value}</span>
         </td>
       </tr>
       <tr>
         <td colspan="3">
             Governor  : S/ UNSV
-        <span style="color: blue">${page1Data.pages[14].fields[1].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[2].value}</span>
         </td>
         <td colspan="3">
             Brakes  : Efficient/ Inefficient
-        <span style="color: blue">${page1Data.pages[14].fields[5].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[6].value}</span>
         </td>
       </tr>
       <tr>
         <td colspan="3">
             Gear changing : Easy/ Difficult
-        <span style="color: blue">${page1Data.pages[14].fields[2].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[3].value}</span>
         </td>
         <td colspan="3">
             Transmission  : S/ UNSV
-        <span style="color: blue">${page1Data.pages[14].fields[6].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[7].value}</span>
         </td>
       </tr>
       <tr>
         <td colspan="3">
             Synchronization  : S/ UNSV
-        <span style="color: blue">${page1Data.pages[14].fields[3].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[4].value}</span>
         </td>
         <td colspan="3">
             Noises/Squeaks/leaks: Yes/ No
-        <span style="color: blue">${page1Data.pages[14].fields[7].value}</span>
+        <span style="color: blue; text-align: center">${page1Data.pages[14].fields[8].value}</span>
         </td>
       </tr>
       <tr>
-        <td style="text-decoration: underline; text-align: left;" colspan="6">Inspectors Remarks : <br> &nbsp; <br> &nbsp;</td>
+        <td style="text-align: left;" colspan="6">
+          <span style="text-decoration: underline;">Inspectors Remarks : </span>
+          <span style="color: blue">${page5Data.pages[0].fields[0].value}</span>
+        </td>
       </tr>
       <tr>
         <td colspan="2">
             <p>Classification:</p>
-            <br>
-            <br>
-            <p>Date: </p>
+            <p style="color: blue">${page5Data.pages[0].fields[1].value}</p>
+            <p>Date : <span style="color: blue">${page5Data.pages[0].fields[2].value}</span></p>
         </td>
         <td colspan="2">
             <p>Signature:_______________________:</p>
-            <br>
-            <p>Name of inspector :________________</p>
-            <p>Name of inspector :________________</p>
-            <p>Designation : _____________________</p> 
+            <p>Name of inspector : <span style="color: blue">${page5Data.pages[0].fields[3].value}</span></p>
+            <p>Designation : <span style="color: blue">${page5Data.pages[0].fields[4].value}</span></p> 
         </td>
         <td colspan="2">
             <p>Countersigned: _______________________:</p>
-            <br>
             <p>Name :________________</p>
             <p>Designation : _____________________</p> 
         </td>
       </tr>
       <tr>
         <td  colspan="6">
-            <p style="text-align: left;">Action by Unit / LRW</p>
-            <p style="text-align: right;">Date : <span style="">_________</span>  OC Unit      </p>
+            <p style="text-align: left;">Action by Unit / LRW
+                  <span style="color: blue">${page5Data.pages[1].fields[0].value}</span>
+            </p>
+            <p style="text-align: right;">Date : ____<span style="color: blue">${page5Data.pages[1].fields[1].value}</span>____
+              OC Unit ________
+            </p>
         </td>
       </tr>
       <tr>
         <td  colspan="6">
-            <p style="text-align: left;">Action by Wksp</p>
+            <p style="text-align: left;">Action by Wksp
+                  <span style="color: blue">${page5Data.pages[2].fields[0].value}</span>
+            </p>
             <div style="display: flex; justify-content: space-between;">
-                <p>Classification After Repair</p>
-                <p style="text-align: right;">Date : <span style="">_________</span>  OC Unit      </p>
+                <p>Classification After Repair <span style="color: blue">${page5Data.pages[2].fields[1].value}</span></p>
+                <p style="text-align: right;">Date : ____<span style="color: blue">${page5Data.pages[2].fields[2].value}</span>____
+                  OC Unit ________     
+                </p>
             </div>
         </td>
       </tr>
@@ -237,13 +249,13 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
 
 
 
-
+    <br><br><br>
     <h2 style="text-decoration: underline; font-size: large; text-align: center;">PART 'A' (TATA 2.5 TON 713C & 715 TC): INITIAL INSP AND CHECKING WITH DIAGNOSTIC 
       TOOLS AND EQPT
       </h2>
     <table>
       <tr>
-        <th style="text-decoration: underline; font-weight: bold;" colspan="6">Oil Level</th>
+        <th style="text-decoration: underline; font-weight: bold;" colspan="7">Oil Level</th>
       </tr>
       <tr>
         <th>Ser</th>
@@ -251,6 +263,7 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
         <th>Specification</th>
         <th>Reqd Tool</th>
         <th>Value Obtained</th>
+        <th>Actual Time (Min)</th>
         <th>Time duration (Min)</th>
       </tr>
 `;
@@ -261,12 +274,26 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
               <td>${table.row[1].value}</td>
               <td>${table.row[2].value}</td>
               <td>${table.row[3].value}</td>
-              <td style="color: blue">${table.row[4].value}</td>   
+              <td style="color: blue; text-align: center">${table.row[4].value}</td>  
+              <td style="color: blue; text-align: center">${table.row[5].value}</td>   
       `;
     if (index == 0)
       html += `<td rowspan="7" class="text-align:center">10 Min</td>`;
     html += `</tr>`;
   });
+
+html += `
+              <tr style=" text-align:center;  font-weight: bold;">
+                <td colspan="7">TOTAL TIME : ${page2Data.totalTime}</td>
+              </tr>
+      `;
+html += `
+              <tr style=" text-align:center;  font-weight: bold;">
+                <td colspan="7">ACTUAL TIME : ${page2Data.actualTime} Min</td>
+              </tr>
+            
+            </table>
+      `;
 
   html += `
       <tr>
@@ -278,10 +305,10 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
     </table>
     <table>
       <tr style="text-align: center">
-        <th colspan="6" style="text-decoration: underline;">CHECKING WITH DIAGNOSTIC TOOLS AND TEST EQPT</th>
+        <th colspan="7" style="text-decoration: underline;">CHECKING WITH DIAGNOSTIC TOOLS AND TEST EQPT</th>
       </tr>
       <tr>
-        <th colspan="6"></th>
+        <th colspan="7"></th>
       </tr>
       <tr>
         <th>Ser</th>
@@ -289,6 +316,7 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
         <th>Specification</th>
         <th>Reqd Tool</th>
         <th>Value Obtained</th>
+        <th>Actual Time (Min)</th>
         <th>Time duration (Min)</th>
       </tr>
       `;
@@ -301,14 +329,15 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
           `;
 
     table.table.map((table, index) => {
-      if (index != 0) html += `<tr><th colspan="6"></th></tr>`;
+      //if (index != 0) html += `<tr><th colspan="7"></th></tr>`;
       html += `
                       <tr>
                         <td>${table.row[0].value}</td>
                         <td>${table.row[1].value}</td>
                         <td>${table.row[2].value}</td>
                         <td>${table.row[3].value}</td>
-                        <td style="color: blue">${table.row[4].value}</td>
+                        <td style="color: blue; text-align: center">${table.row[4].value}</td>
+                        <td style="color: blue; text-align: center">${table.row[6].value}</td>
                         <td>${table.row[5].value}</td>
                       </tr>  
                 `;
@@ -317,14 +346,17 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
 
   html += `
               <tr style=" text-align:center;  font-weight: bold;">
-                <td colspan="5">TOTAL TIME</td>
-                <td colspan="1" >01:23 Hrs</td>
+                <td colspan="7">TOTAL TIME : ${page3Data.totalTime} Min</td>
+              </tr>
+          `
+
+  html += `
+              <tr style=" text-align:center;  font-weight: bold;">
+                <td colspan="7">ACTUAL TIME : ${page3Data.actualTime} Min</td>
               </tr>
             
             </table>
       `;
-
-
 
   html += `
     
@@ -335,21 +367,22 @@ export default makeHtml = (page1Data, page2Data, page3Data, page4Data) => {
     </h2>
     <table>
       <tr>
-        <th style="text-align: left" colspan="6">ENGINE</th>
+        <th style="text-align: left" colspan="7">ENGINE</th>
       </tr>
       <tr>
         <th>Ser</th>
         <th>Item</th>
         <th>Visual Insp</th>
         <th>Time</th>
+        <th>Actual Time</th>
         <th>Satisfactory/ Unsatisfactory</th>
         <th>Remarks</th>
       </tr>
 
 
-`
+`;
 
-page4Data.tables.forEach((table) => {
+  page4Data.tables.forEach((table) => {
     html += `
             <tr style="text-align: center">
               <th colspan="6" style="text-align: left">${table.tableTitle}</th>
@@ -357,15 +390,16 @@ page4Data.tables.forEach((table) => {
           `;
 
     table.table.map((table, index) => {
-      if (index != 0) html += `<tr><th colspan="6"></th></tr>`;
+      //if (index != 0) html += `<tr><th colspan="6"></th></tr>`;
       html += `
                       <tr>
                         <td>${table.row[0].value}</td>
                         <td>${table.row[1].value}</td>
                         <td>${table.row[2].value}</td>
                         <td>${table.row[3].value}</td>
-                        <td style="color: blue">${table.row[4].value}</td>
-                        <td>${table.row[5].value}</td>
+                        <td style="color: blue; text-align: center">${table.row[4].value}</td>
+                        <td style="color: blue; text-align: center">${table.row[5].value}</td>
+                        <td style="color: blue; text-align: center">${table.row[6].value}</td>
                       </tr>  
                 `;
     });
@@ -373,8 +407,13 @@ page4Data.tables.forEach((table) => {
 
   html += `
               <tr style=" text-align:center;  font-weight: bold;">
-                <td colspan="5">TOTAL TIME</td>
-                <td colspan="1" >01:27 Hrs</td>
+                <td colspan="7">TOTAL TIME : ${page4Data.totalTime} Min</td>
+              </tr>
+          `
+
+  html += `
+              <tr style=" text-align:center;  font-weight: bold;">
+                <td colspan="7">ACTUAL TIME : ${page4Data.actualTime} Min</td>
               </tr>
             
             </table>

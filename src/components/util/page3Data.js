@@ -406,5 +406,5 @@ export default page3Data = {
       },
     ],
     totalTime: "83 Min",
-    actualTime: "",
+    actualTime: "0",
   };

@@ -20,6 +20,7 @@ import Page_1 from "./src/components/Pages/Page_1";
 import Page_2 from "./src/components/Pages/Page_2";
 import Page_3 from "./src/components/Pages/Page_3";
 import Page_4 from "./src/components/Pages/Page_4";
+import Page_5 from "./src/components/Pages/Page_5";
 
 
 /// IMPORTING PAGE DATA FROM UTIL
@@ -28,6 +29,7 @@ import page1Data from "./src/components/util/page1Data";
 import page2Data from "./src/components/util/page2Data";
 import page3Data from "./src/components/util/page3Data";
 import page4Data from "./src/components/util/page4Data";
+import page5Data from "./src/components/util/page5Data";
 
 
 const {width} = Dimensions.get("window");
@@ -37,7 +39,7 @@ export default function App() {
 
 
   // USESTATES
-  const [pageState, setPageState] = useState([true, false, false, false]);
+  const [pageState, setPageState] = useState([true, false, false, false, false]);
   const [showPdfState, setshowPdfState] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -46,6 +48,7 @@ export default function App() {
   const page2DataRef = useRef(page2Data);
   const page3DataRef = useRef(page3Data);
   const page4DataRef = useRef(page4Data);
+  const page5DataRef = useRef(page5Data);
 
   const downloadPathRef = useRef("") // contains full temp download path (preview pdf path)
   const filenameRef = useRef("");   // filename to be saved
@@ -55,19 +58,22 @@ export default function App() {
   // HANDLERS
 
   const page1InputValueHandler = (pageDataValues) => page1DataRef.current = pageDataValues
-  const page2InputValueHandler = (pageDataValues) => page2DataRef.current = pageDataValues
-  const page3InputValueHandler = (pageDataValues) => page3DataRef.current = pageDataValues
-  const page4InputValueHandler = (pageDataValues) => page4DataRef.current = pageDataValues
+  const page2InputValueHandler = (pageDataValues) => {page2DataRef.current = pageDataValues; page5DataRef.current.actualTime = parseInt(page2DataRef.current.actualTime) + parseInt(page3DataRef.current.actualTime) + parseInt(page4DataRef.current.actualTime); }
+  const page3InputValueHandler = (pageDataValues) => {page3DataRef.current = pageDataValues; page5DataRef.current.actualTime = parseInt(page2DataRef.current.actualTime) + parseInt(page3DataRef.current.actualTime) + parseInt(page4DataRef.current.actualTime); }
+  const page4InputValueHandler = (pageDataValues) => {page4DataRef.current = pageDataValues; page5DataRef.current.actualTime = parseInt(page2DataRef.current.actualTime) + parseInt(page3DataRef.current.actualTime) + parseInt(page4DataRef.current.actualTime); }
+  const page5InputValueHandler = (pageDataValues) => page5DataRef.current = pageDataValues
 
   const handlePageStateChange = (pressed) => {
     if (pressed === 0 && !pageState[0]) {
-      setPageState([true, false, false, false]);
+      setPageState([true, false, false, false, false]);
     } else if (pressed === 1 && !pageState[1]) {
-      setPageState([false, true, false, false]);
+      setPageState([false, true, false, false, false]);
     } else if (pressed === 2 && !pageState[2]) {
-      setPageState([false, false, true, false]);
+      setPageState([false, false, true, false, false]);
     } else if (pressed === 3 && !pageState[3]) {
-      setPageState([false, false, false, true]);
+      setPageState([false, false, false, true, false]);
+    } else if (pressed === 4 && !pageState[4]) {
+      setPageState([false, false, false, false, true]);
     }
   };
 
@@ -93,7 +99,7 @@ export default function App() {
   // PDF FUNCTIONS
   const createPDF = async () => {
     
-    const html = makeHtml(page1DataRef.current, page2DataRef.current, page3DataRef.current, page4DataRef.current);
+    const html = makeHtml(page1DataRef.current, page2DataRef.current, page3DataRef.current, page4DataRef.current, page5DataRef.current);
 
     let options = {
       html: html,
@@ -203,6 +209,7 @@ export default function App() {
               "OIL LEVEL INSPECTION",
               "DIAGNOSTIC INSPECTION",
               "VISUAL INSPECTION",
+              "FINAL",
             ]}
             handlePageStateChange={handlePageStateChange}
             activeButtonIndex={pageState.indexOf(true)}
@@ -213,6 +220,7 @@ export default function App() {
           { pageState[1] && ( <Page_2 pageData={page2DataRef.current} inputValueHandler={page2InputValueHandler} />)}
           { pageState[2] && ( <Page_3 pageData={page3DataRef.current} inputValueHandler={page3InputValueHandler} />)}
           { pageState[3] && ( <Page_4 pageData={page4DataRef.current} inputValueHandler={page4InputValueHandler} />)}
+          { pageState[4] && ( <Page_5 pageData={page5DataRef.current} inputValueHandler={page5InputValueHandler} />)}
 
           {/* MAIN PAGE PDF PREVIEW BUTTON */}
           <Button

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Report",
-    "slug": "Report",
+    "name": "Tech-Insp-Report",
+    "slug": "Tech-Insp-Report",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/iconfull.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#20252D"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -24,7 +24,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/iconfull.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#20252D"
       },
       "permissions": [
         "android.permission.READ_EXTERNAL_STORAGE",
@@ -39,7 +39,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "5773d991-dfc7-4c81-9ff7-1f59d361a5ec"
+        "projectId": "b7eee06b-ded8-400c-a26d-f42b8c8c3bf9"
       }
     }
   }

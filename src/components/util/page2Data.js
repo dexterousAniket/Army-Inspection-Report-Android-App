@@ -124,5 +124,5 @@ export default page2Data = {
     },
   ],
   totalTime: "10 Min",
-  actualTime: "",
+  actualTime: "0",
 };

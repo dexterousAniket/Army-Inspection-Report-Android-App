@@ -150,6 +150,7 @@ export default page1Data = {
       {
         heading: "ROAD TEST :",
         fields: [
+          { value: "", title: "ROAD TEST : RDY/ NRDY", radio: ["RDY", "NRDY"] },
           { value: "", title: "Engine : S/ UNSV", radio: ["S", "UNSV"] },
           { value: "", title: "Governor  : S/ UNSV", radio: ["S", "UNSV"] },
           {

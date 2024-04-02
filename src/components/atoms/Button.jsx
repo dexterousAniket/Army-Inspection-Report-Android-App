@@ -10,7 +10,7 @@ import React from "react";
 //   - index
 //   - height
 export default Button = (props) => {
-  const bgColor = props.bgcolor ? props.bgcolor : "#354f52";
+  const bgColor = props.bgcolor ? props.bgcolor : "#282829";
   const clickHandler = props.clickHandler
     ? () => props.clickHandler(props.index)
     : () => {};
@@ -29,7 +29,7 @@ export default Button = (props) => {
       onPress={clickHandler}
       android_ripple={{ color: rippleColor }}
     >
-      <Text style={{ color: color, ...styles.text }}>{props.text}</Text>
+      <Text style={{ color: color, fontWeight: 'bold', ...styles.text }}>{props.text}</Text>
     </Pressable>
   );
 };
